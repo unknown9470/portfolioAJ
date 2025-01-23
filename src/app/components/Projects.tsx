@@ -1,6 +1,5 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import Image from "next/image";
 import { useState, useRef } from "react";
 import { Project } from "../types/types";
 import { projects } from "../data/ProjectsData";
@@ -56,7 +55,7 @@ const Projects = () => {
               whileHover={{ scale: 1.05 }}
               onClick={() => openModal(project)}
             >
-              <Image
+              <img
                 src={project.image}
                 alt={project.title}
                 className="w-full h-48 object-cover rounded-lg mb-4"
@@ -96,7 +95,7 @@ const Projects = () => {
           >
             
             <div className="w-full h-full md:w-1/2">
-              <Image
+              <img
                 src={selectedProject.image}
                 alt={selectedProject.title}
                 className="w-full h-full object-cover rounded-lg"
