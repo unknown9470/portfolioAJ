@@ -25,7 +25,7 @@ const Projects = () => {
         <h2 className="text-3xl font-bold text-primary text-center mb-8">
           Mes Projets
         </h2>
-        <div className="flex justify-center gap-4 mb-6">
+        <div className="flex flex-wrap justify-center gap-2 mb-6">
           {uniqueTags.map((tag) => (
             <button
               key={tag}
