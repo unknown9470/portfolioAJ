@@ -1,18 +1,7 @@
 "use client";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-const skills = [
-  "JavaScript",
-  "TypeScript",
-  "React",
-  "Node.js",
-  "CSS",
-  "Tailwind CSS",
-  "Docker",
-  "Flask",
-  "MongoDB",
-];
+import { skills } from "../data/SkillsData";
 
 const Skills = () => {
   const ref = useRef(null); 

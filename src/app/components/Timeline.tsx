@@ -1,19 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-
-interface Experience {
-  title: string;
-  company: string;
-  date: string;
-}
-
-interface TimelineProps {
-  experiences: Experience[];
-}
+import { TimelineProps } from "../types/types";
 
 const Timeline: React.FC<TimelineProps> = ({ experiences }) => {
-  const ref = useRef(null); // Référence pour observer la section
-  const isInView = useInView(ref, { once: true }); // Animation déclenchée une seule fois
+  const ref = useRef(null); 
+  const isInView = useInView(ref, { once: true }); 
 
   return (
     <section ref={ref} className="timeline bg-gray-100 py-4">

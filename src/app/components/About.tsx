@@ -35,30 +35,69 @@ const About = () => {
   return (
     <>
       <motion.section
-        className="bg-primary h-screen flex flex-col justify-center items-center text-white text-center"
+        className="bg-primary h-screen flex flex-col justify-center items-center text-white text-center relative"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
       >
-        <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-          <span>Bienvenue, Je suis</span>
-          <br />
-          <TypeAnimation
-            sequence={[
-              "JEANDENANS Alexis",
-              1000,
-              "Full Stack Developer",
-              1000,
-              "Mobile Developer",
-              1000,
-            ]}
-            wrapper="span"
-            speed={50}
-            repeat={Infinity}
-          />
-        </h1>
-        
-      </motion.section>
+      <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+        <span>Bienvenue, Je suis</span>
+        <br />
+        <TypeAnimation
+          sequence={[
+            "JEANDENANS Alexis",
+            1000,
+            "Full Stack Developer",
+            1000,
+            "Mobile Developer",
+            1000,
+          ]}
+          wrapper="span"
+          speed={50}
+          repeat={Infinity}
+        />
+      </h1>
+
+      <div className="absolute bottom-0 left-0 w-full h-50 overflow-hidden">
+        <svg
+          className="waves"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlnsXlink="http://www.w3.org/1999/xlink"
+          viewBox="0 24 150 56"
+          preserveAspectRatio="none"
+          shapeRendering="auto"
+        >
+          <defs>
+            <path
+              id="gentle-wave"
+              d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+            />
+          </defs>
+          <g className="parallax">
+            <use xlinkHref="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+            <use xlinkHref="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+            <use xlinkHref="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+            <use xlinkHref="#gentle-wave" x="48" y="7" fill="#fff" />
+          </g>
+        </svg>
+      </div>
+
+      <style jsx>{`
+        .animate-waving {
+          animation: wave 5s cubic-bezier(0.4, 0.0, 0.2, 0.2) infinite;
+        }
+
+        @keyframes wave {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
+    </motion.section>
+
       <section id="about" className="py-16 bg-background">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-primary text-center mb-8">À propos de moi</h2>
