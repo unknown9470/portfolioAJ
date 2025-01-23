@@ -1,15 +1,28 @@
-const Header = () => (
-  <header className="bg-primary text-white p-4">
-    <nav className="container mx-auto flex justify-between items-center">
-      <h1 className="text-3xl font-bold">Alexis Jeandenans</h1>
-      <ul className="hidden md:flex space-x-4">
-        <li><a href="#about" className="hover:text-secondary">À propos</a></li>
-        <li><a href="#projects" className="hover:text-secondary">Projets</a></li>
-        <li><a href="#contact" className="hover:text-secondary">Contact</a></li>
-      </ul>
-      <button className="md:hidden text-secondary">Menu</button>
-    </nav>
-  </header>
-);
+"use client";
+import React, { useState } from 'react';
+
+const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  return (
+    <header className="bg-primary text-white p-4">
+      <nav className="container mx-auto flex justify-between items-center">
+        <h1 className="text-3xl font-bold">Alexis Jeandemans</h1>
+        <ul className={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:space-x-4 absolute md:relative top-16 md:top-0 left-0 w-full md:w-auto bg-primary md:bg-transparent p-4 md:p-0`}>
+          <li><a href="#about" className="hover:text-secondary block md:inline-block py-2 md:py-0">À propos</a></li>
+          <li><a href="#projects" className="hover:text-secondary block md:inline-block py-2 md:py-0">Projets</a></li>
+          <li><a href="#contact" className="hover:text-secondary block md:inline-block py-2 md:py-0">Contact</a></li>
+        </ul>
+        <button className="md:hidden text-secondary" onClick={toggleMenu}>
+          Menu
+        </button>
+      </nav>
+    </header>
+  );
+};
 
 export default Header;
