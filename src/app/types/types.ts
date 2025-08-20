@@ -5,6 +5,8 @@ export interface Project {
   link: string;
   tags: string[];
   image: string;
+  demoUrl?: string;
+  repoUrl?: string;
 }
 export interface Experience {
   title: string;

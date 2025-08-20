@@ -1,18 +1,9 @@
 "use client";
-import { ArrowRight, Code2, Database, Gauge, GitBranch } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { useState } from 'react';
-import { Project } from '../types/types';
-import { projects } from '../data/ProjectsData';
-
-
 
 export default function Banner() {
     const [filter, setFilter] = useState<string | null>(null); 
-    const [selectedProject , setSelectedProject] = useState<Project | null >(null);
-    const uniqueTags = Array.from(new Set(projects.flatMap((project) => project.tags)));
-    const filteredProjects = filter
-        ? projects.filter((project) => project.tags.includes(filter))
-        : projects;
 	return (
 		<main>
 			{/* Hero Section */}
