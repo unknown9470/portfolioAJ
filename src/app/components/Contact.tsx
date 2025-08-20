@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import emailjs from "emailjs-com";
+import { Send } from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -40,7 +41,11 @@ const Contact = () => {
   return (
     <section id="contact" className="py-16 bg-background">
       <div className="container p-4 mx-auto md:p-4">
-        <h2 className="text-3xl font-bold text-primary text-center mb-6">Contactez-moi</h2>
+        {/* <h2 className="text-3xl font-bold text-primary text-center mb-6">Contactez-moi</h2> */}
+        <div className="flex items-center justify-center mb-6">
+          <Send className="h-5 w-5 text-primary mr-2" />
+          <h2 className="text-3xl font-bold text-primary text-center">Contactez-moi</h2>
+        </div>
         {isSent && <div className="md:w-50 mb-2"><h4 className="text-green-500 font-bold text-center mt-4 rounded-lg ">🎉 Votre message a été envoyé avec succès ! 🎉</h4></div>}
         {error && <p className="text-red-500 text-center mt-4">{error}</p>}
         <form onSubmit={handleSubmit} className="max-w-lg mx-auto bg-white p-8 rounded-lg shadow-lg">
@@ -78,8 +83,8 @@ const Contact = () => {
               required
             ></textarea>
           </div>
-          <button type="submit" className="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-700">
-            Envoyer
+          <button type="submit" className="bg-secondary text-white px-4 py-2 rounded-lg hover:bg-blue-700 flex items-center gap-2">
+            <Send className="h-5 w-5" />Envoyer
           </button>
         </form>
       </div>

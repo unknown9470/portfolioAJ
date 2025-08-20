@@ -3,6 +3,7 @@ import { motion, useInView } from "framer-motion";
 import { useState, useRef } from "react";
 import { Project } from "../types/types";
 import { projects } from "../data/ProjectsData";
+import { ArrowRight } from "lucide-react";
 
 
 
@@ -19,116 +20,60 @@ const Projects = () => {
   const isInView = useInView(ref, { once: true }); 
   
 
-  return (
-    <section id="projects" className="py-16 bg-white">
-      <div className="container mx-auto p-2 md:p-4">
-        <h2 className="text-3xl font-bold text-primary text-center mb-8">
-          Mes Projets
-        </h2>
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
-          {uniqueTags.map((tag) => (
-            <button
-              key={tag}
-              onClick={() => setFilter(filter === tag ? null : tag)}
-              className={`px-4 py-2 rounded ${
-                filter === tag ? "bg-secondary text-white" : "bg-gray-200"
-              }`}
-            >
-              {tag}
-            </button>
-          ))}
-        </div>
-        <div
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        >
-          {filteredProjects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="bg-background p-4 rounded-lg shadow-lg"
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.1, 
-              }}
-              whileHover={{ scale: 1.05 }}
-              onClick={() => openModal(project)}
-            >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-48 object-cover rounded-lg mb-4"
-              />
-              <h3 className="text-xl font-semibold text-primary">
-                {project.title}
-              </h3>
-              <p className="mt-2 text-gray-700">{project.description}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {project.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-secondary text-white text-sm px-3 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={project.link}
-                className="text-secondary hover:underline mt-4 block"
-              >
-                Voir le projet
-              </a>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-      {selectedProject && (
-        <div
-          className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50"
-          onClick={closeModal}
-        >
-          <div
-            className="bg-white rounded-lg shadow-lg w-11/12 max-w-4xl p-6 relative flex flex-col md:flex-row overflow-hidden"
-            onClick={(e) => e.stopPropagation()} 
-          >
-            
-            <div className="w-full h-full md:w-1/2">
-              <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-full rounded-lg"
-              />
-            </div>
+  return (<>
+    {/* Featured Projects */}
+			<section className="py-16">
+				<div className="text-center mb-12">
+					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
+						Projets phares
+					</h2>
+					<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+						Une sélection de mes réalisations les plus représentatives, alliant
+						expertise technique et impact métier.
+					</p>
+				</div>
+				<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+					{filteredProjects.map((project, index) => (
+						<div
+							key={index}
+							className="bg-white rounded-xl shadow hover:shadow-lg transition"
+						>
+							<img
+								src={project.image}
+								alt={project.title}
+								className="w-full h-48 object-cover rounded-t-xl"
+							/>
+							<div className="p-6">
+								<h3 className="font-bold text-xl mb-2">{project.title}</h3>
+								<p className="text-muted-foreground mb-4">
+									{project.description}
+								</p>
+								<div className="flex flex-wrap gap-2 mb-2">
+									{project.tags.map((tag) => (
+										<span
+											key={tag}
+											className="px-2 py-1 rounded bg-primary/10 text-primary text-xs font-medium"
+										>
+											{tag}
+										</span>
+									))}
+								</div>
+							</div>
+						</div>
+					))}
+				</div>
 
-           
-            <div className="w-full md:w-1/2 md:pl-6 mt-4 md:mt-0 flex flex-col">
-              <h2 className="text-2xl font-bold mb-4">
-                {selectedProject.title}
-              </h2>
-              <p className="text-gray-700 mb-4">{selectedProject.description}</p>
-              <div className="mt-4 flex flex-wrap gap-2">
-                {selectedProject.tags.map((tag, idx) => (
-                  <span
-                    key={idx}
-                    className="bg-secondary text-white text-sm px-3 py-1 rounded-full"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <button
-                onClick={closeModal}
-                className="mt-6 px-4 py-2 bg-red-500 text-white font-semibold rounded shadow hover:bg-red-600"
-              >
-                Fermer
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </section>
+				<div className="text-center mt-12">
+					<a
+						href="/projects"
+						className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold rounded-lg border border-primary text-primary bg-white hover:bg-primary/10 transition"
+					>
+						Voir tous les projets
+						<ArrowRight className="ml-2 h-5 w-5" />
+					</a>
+				</div>
+			</section>
+          </>
   );
 };
 
