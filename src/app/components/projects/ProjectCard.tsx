@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { Project } from "../../types/types";
+import Image from "next/image";
 
 type ProjectCardProps = {
   project: Project;
@@ -7,7 +8,7 @@ type ProjectCardProps = {
   onClick: () => void;
 };
 
-export default function ProjectCard({ project, index = 0, onClick }: ProjectCardProps) {
+export default function ProjectCard({ project, index = 0, onClick }: Readonly<ProjectCardProps>) {
   return (
     <motion.div
       className="bg-white rounded-xl shadow hover:shadow-lg transition cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary"
@@ -20,10 +21,12 @@ export default function ProjectCard({ project, index = 0, onClick }: ProjectCard
         if (e.key === "Enter" || e.key === " ") onClick();
       }}
     >
-      <img
+      <Image
         src={project.image}
         alt={project.title}
         className="w-full h-48 object-cover rounded-t-xl"
+        width={400}
+        height={300}
       />
       <div className="p-6">
         <h3 className="font-bold text-xl mb-2">{project.title}</h3>

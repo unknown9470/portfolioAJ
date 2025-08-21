@@ -2,6 +2,7 @@ import { Project } from "../types/types";
 
 export const projects : Project[] = [
   {
+    id: 1,
     title: "PyraIA",
     description: "Solution d'assitance de chef de projet avec utilisation de l'intelligence artificielle",
     link: "#",
@@ -9,6 +10,7 @@ export const projects : Project[] = [
     image: "/images/pyraIAHome.png",
   },
   {
+    id: 2,
     title: "VeriftopUI",
     description: "Test de landing page pour veriftop",
     link: "#",
@@ -16,6 +18,7 @@ export const projects : Project[] = [
     image: "/images/VeriftopUi.png",
   },
   {
+    id: 3,
     title: "Veriftop",
     description: "CRM pour entreprise spécialisé dans le diagnostique énergétique",
     link: "#",
@@ -23,6 +26,7 @@ export const projects : Project[] = [
     image: "/images/veriftop.png",
   },
   {
+    id: 4,
     title: "Jangular",
     description: "Application CRM",
     link: "#",
@@ -31,6 +35,7 @@ export const projects : Project[] = [
   },
   
   {
+    id: 5,
     title: "GSS",
     description: "Application pour la gestion des formations d'un centre de formation",
     link: "#",

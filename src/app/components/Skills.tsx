@@ -1,20 +1,7 @@
 "use client";
-import { motion, useInView } from "framer-motion";
-import { useRef, useState } from "react";
 import { skills } from "../data/SkillsData";
-import { Project } from "../types/types";
-import { projects } from "../data/ProjectsData";
-import { ArrowRight } from "lucide-react";
 
 const Skills = () => {
-  const ref = useRef(null); 
-  const isInView = useInView(ref);
-  const [filter, setFilter] = useState<string | null>(null); 
-  const [selectedProject , setSelectedProject] = useState<Project | null >(null);
-  const uniqueTags = Array.from(new Set(projects.flatMap((project) => project.tags)));
-  const filteredProjects = filter
-          ? projects.filter((project) => project.tags.includes(filter))
-          : projects; 
 
   return (<>
     {/* Skills Overview */}
@@ -28,7 +15,7 @@ const Skills = () => {
 					</p>
 				</div>
 
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 p-4">
 					{skills.map(({ icon: Icon, title, techs }) => (
 						<div
 							key={title}
@@ -57,7 +44,7 @@ const Skills = () => {
 						Discutons de votre projet et voyons comment mon expertise peut vous
 						aider à atteindre vos objectifs techniques et métier.
 					</p>
-					<div className="flex flex-col sm:flex-row gap-4 justify-center">
+					<div className="flex flex-col sm:flex-row gap-4 justify-center p-4">
 						<a
 							href="/contact"
 							className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold rounded-lg bg-primary text-white hover:bg-primary/80 transition"

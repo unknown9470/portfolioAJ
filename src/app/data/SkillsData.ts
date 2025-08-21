@@ -1,14 +1,3 @@
-// export const skills = [
-//   "JavaScript",
-//   "TypeScript",
-//   "React",
-//   "Node.js",
-//   "CSS",
-//   "Tailwind CSS",
-//   "Docker",
-//   "Flask",
-//   "MongoDB",
-// ];
 import type { LucideIcon } from 'lucide-react';
 import { Code2, Database, Gauge, GitBranch } from 'lucide-react';
 

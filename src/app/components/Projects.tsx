@@ -1,28 +1,21 @@
 "use client";
-import { useInView } from "framer-motion";
-import { useState, useRef } from "react";
-import { Project } from "../types/types";
+import { useState } from "react";
 import { projects } from "../data/ProjectsData";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 
 
 const Projects = () => {
-  const [filter, setFilter] = useState<string | null>(null); 
-  const [selectedProject , setSelectedProject] = useState<Project | null >(null);
-  const uniqueTags = Array.from(new Set(projects.flatMap((project) => project.tags)));
+  const [filter] = useState<string | null>(null); 
   const filteredProjects = filter
     ? projects.filter((project) => project.tags.includes(filter))
     : projects;
-  const openModal = (project : Project) => setSelectedProject(project);
-  const closeModal = () => setSelectedProject(null);
-  const ref = useRef(null); 
-  const isInView = useInView(ref, { once: true }); 
   
 
   return (<>
     {/* Featured Projects */}
-			<section className="py-16">
+			<section className="py-16 p-4">
 				<div className="text-center mb-12">
 					<h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
 						Projets phares
@@ -33,16 +26,18 @@ const Projects = () => {
 					</p>
 				</div>
 				<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-					{filteredProjects.map((project, index) => (
+					{filteredProjects.map((project) => (
 						<div
-							key={index}
+							key={project.id}
 							className="bg-white rounded-xl shadow hover:shadow-lg transition"
 						>
-							<img
+							<Image
 								src={project.image}
 								alt={project.title}
 								className="w-full h-48 object-cover rounded-t-xl"
-							/>
+                width={400}
+                height={300}
+              />
 							<div className="p-6">
 								<h3 className="font-bold text-xl mb-2">{project.title}</h3>
 								<p className="text-muted-foreground mb-4">

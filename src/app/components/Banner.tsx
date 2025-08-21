@@ -1,19 +1,20 @@
 "use client";
 import { ArrowRight } from 'lucide-react';
-import { useState } from 'react';
+import Image from 'next/image';
 
 export default function Banner() {
-    const [filter, setFilter] = useState<string | null>(null); 
 	return (
 		<main>
 			{/* Hero Section */}
 			<section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 				{/* Background */}
 				<div className="absolute inset-0 z-0">
-					<img
+					<Image
 						src="/images/backgroundportfolio.png"
 						alt=""
 						className="w-full h-full object-cover"
+                        width={1920}
+                        height={1080}
 					/>
 					<div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
 				</div>
@@ -34,7 +35,7 @@ export default function Banner() {
 							<p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
 								Expert front-end React/Next.js, passionné par la{' '}
 								<strong>Clean Architecture</strong>, la <strong>CI/CD</strong>{' '}
-								et l'<strong>observabilité</strong>. Je transforme vos idées en
+								et l&apos;<strong>observabilité</strong>. Je transforme vos idées en
 								applications robustes et performantes.
 							</p>
 						</div>

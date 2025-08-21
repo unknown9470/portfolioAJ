@@ -4,7 +4,7 @@ type TagFilterProps = {
   onChange: (tag: string | null) => void;
 };
 
-export default function TagFilter({ tags, active, onChange }: TagFilterProps) {
+export default function TagFilter({ tags, active, onChange }: Readonly<TagFilterProps>) {
   if (!tags.length) return null;
 
   return (

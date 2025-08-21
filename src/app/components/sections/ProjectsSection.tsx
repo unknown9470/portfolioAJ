@@ -26,7 +26,7 @@ export default function ProjectsSection() {
 
   return (
     <>
-      <section className="py-16" ref={ref} data-inview={isInView}>
+      <section className="py-16 p-4" ref={ref} data-inview={isInView}>
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl mb-4">
             Projets phares

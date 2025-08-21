@@ -1,13 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import type { Project } from "../../types/types";
 import Modal from "../ui/Modal";
+import Image from "next/image";
 
 type ProjectModalProps = {
   project: Project | null;
   onClose: () => void;
 };
 
-export default function ProjectModal({ project, onClose }: ProjectModalProps) {
+export default function ProjectModal({ project, onClose }: Readonly<ProjectModalProps>) {
   const open = !!project;
 
   return (
@@ -15,10 +16,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
       {project && (
         <div className="p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row gap-6">
-            <img
+            <Image
               src={project.image}
               alt={project.title}
               className="w-full sm:w-1/2 h-56 object-cover rounded-lg"
+              width={400}
+              height={300}
             />
             <div className="flex-1">
               <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
@@ -38,7 +41,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
               <div className="flex gap-3">
                 {"demoUrl" in project && project.demoUrl && (
                   <a
-                    href={project.demoUrl as string}
+                    href={project.demoUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center px-4 py-2 rounded-md bg-primary text-white hover:opacity-90"
@@ -49,7 +52,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 )}
                 {"repoUrl" in project && project.repoUrl && (
                   <a
-                    href={project.repoUrl as string}
+                    href={project.repoUrl}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center px-4 py-2 rounded-md border border-primary text-primary hover:bg-primary/10"
