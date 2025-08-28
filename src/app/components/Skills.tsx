@@ -1,4 +1,5 @@
 "use client";
+import { FileDown } from "lucide-react";
 import { skills } from "../data/SkillsData";
 
 const Skills = () => {
@@ -52,10 +53,12 @@ const Skills = () => {
 							Démarrer un projet
 						</a>
 						<a
-							href="/cv-alexis-jeandenans.pdf"
-							download
+							href="/Jeandenans_alexis_CV.pdf"
+              download="Jeandenans_alexis_CV.pdf"           // nom du fichier côté utilisateur
+              type="application/pdf"
 							className="inline-flex items-center justify-center px-6 py-3 text-lg font-semibold rounded-lg border border-primary text-primary bg-white hover:bg-primary/10 transition"
 						>
+              <FileDown className="h-5 w-5 mr-2" />
 							Télécharger mon CV
 						</a>
 					</div>
