@@ -27,6 +27,14 @@ export const projects : Project[] = [
   },
   {
     id: 4,
+    title: "Websocket",
+    description: "Mise en place d'une communication en temps réel entre le client et le serveur",
+    link: "#",
+    tags: ["React" ,"Express"],
+    image: "/images/websocket.png",
+  },
+  {
+    id: 5,
     title: "VeriftopUI",
     description: "Test de landing page pour veriftop",
     link: "#",
@@ -34,7 +42,7 @@ export const projects : Project[] = [
     image: "/images/VeriftopUi.png",
   },
   {
-    id: 5,
+    id: 6,
     title: "Veriftop",
     description: "CRM pour entreprise spécialisé dans le diagnostique énergétique",
     link: "#",
@@ -42,7 +50,7 @@ export const projects : Project[] = [
     image: "/images/veriftop.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "Jangular",
     description: "Application CRM",
     link: "#",
@@ -51,7 +59,7 @@ export const projects : Project[] = [
   },
   
   {
-    id: 7,
+    id: 8,
     title: "GSS",
     description: "Application pour la gestion des formations d'un centre de formation",
     link: "#",
@@ -60,7 +68,7 @@ export const projects : Project[] = [
   },
 
   {
-    id: 8,
+    id: 9,
     title: "WekiCook",
     description: "Application de gestion de recettes de cuisine",
     link: "#",
