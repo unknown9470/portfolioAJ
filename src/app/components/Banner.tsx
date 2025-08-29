@@ -12,9 +12,10 @@ export default function Banner() {
 					<Image
 						src="/images/backgroundportfolio.png"
 						alt=""
-						className="w-full h-full object-cover"
-                        width={1920}
-                        height={1080}
+						fill                    
+						sizes="100vw"           // ✅ hint responsive
+						className="object-cover"// ✅ l'image couvre sans déborder
+						priority                // (optionnel) si au-dessus de la ligne de flottaison
 					/>
 					<div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/90" />
 				</div>
@@ -26,7 +27,7 @@ export default function Banner() {
 							<span className="inline-block mb-4 px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20 font-medium">
 								Développeur Full-Stack
 							</span>
-							<h1 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-7xl">
+							<h1 className="text-4xl font-bold tracking-tight sm:text-4xl lg:text-7xl">
 								Alexis{' '}
 								<span className="gradient-hero bg-clip-text text-transparent">
 									Jeandenans
