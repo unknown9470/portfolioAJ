@@ -42,6 +42,14 @@ export const projects : Project[] = [
     image: "/images/foodalternativesscreen.png",
   },
   {
+    id: 5,
+    title: "Predict AirBnb price",
+    description: "Application de prédiction des prix AirBnb",
+    link: "#",
+    tags: ["React" ,"FastAPI"],
+    image: "/images/predictionairbnb.png",
+  },
+  {
     id: 6,
     title: "VeriftopUI",
     description: "Test de landing page pour veriftop",
