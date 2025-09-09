@@ -35,6 +35,14 @@ export const projects : Project[] = [
   },
   {
     id: 5,
+    title: "Food Alternatives",
+    description: "Application de recherche d'alternatives alimentaires plus saines",
+    link: "#",
+    tags: ["React" ,"NestJs"],
+    image: "/images/foodalternativesscreen.png",
+  },
+  {
+    id: 6,
     title: "VeriftopUI",
     description: "Test de landing page pour veriftop",
     link: "#",
@@ -42,7 +50,7 @@ export const projects : Project[] = [
     image: "/images/VeriftopUi.png",
   },
   {
-    id: 6,
+    id: 7,
     title: "Veriftop",
     description: "CRM pour entreprise spécialisé dans le diagnostique énergétique",
     link: "#",
@@ -50,7 +58,7 @@ export const projects : Project[] = [
     image: "/images/veriftop.png",
   },
   {
-    id: 7,
+    id: 8,
     title: "Jangular",
     description: "Application CRM",
     link: "#",
@@ -59,7 +67,7 @@ export const projects : Project[] = [
   },
   
   {
-    id: 8,
+    id: 9,
     title: "GSS",
     description: "Application pour la gestion des formations d'un centre de formation",
     link: "#",
@@ -68,7 +76,7 @@ export const projects : Project[] = [
   },
 
   {
-    id: 9,
+    id: 10,
     title: "WekiCook",
     description: "Application de gestion de recettes de cuisine",
     link: "#",
