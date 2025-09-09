@@ -41,7 +41,7 @@ export default function Footer() {
             <h4 className="text-sm font-semibold">Contact</h4>
             <div className="flex space-x-4">
               <a
-                href="https://github.com/alexisjeandenans"
+                href="https://github.com/unknown9470"
                 className="text-muted-foreground hover:text-foreground transition-smooth"
                 aria-label="GitHub"
                 target="_blank"
