@@ -15,7 +15,7 @@ export const projects : Project[] = [
     description: "Application de covoiturage moderne",
     link: "#",
     tags: ["Ionic", "React", "FastAPI"],
-    image: "/images/vamoslanding.png"
+    image: "/images/vamosjuntos/vamoslanding.png"
   },
   {
     id: 3,

@@ -16,13 +16,26 @@ export default function ProjectModal({ project, onClose }: Readonly<ProjectModal
       {project && (
         <div className="p-6 sm:p-8">
           <div className="flex flex-col sm:flex-row gap-6">
-            <Image
-              src={project.image}
-              alt={project.title}
-              className="w-full sm:w-1/2 h-56 object-cover rounded-lg"
-              width={400}
-              height={300}
-            />
+            {/* <div className="relative w-full sm:w-1/2 aspect-[16/10] rounded-lg overflow-hidden bg-muted/20">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-contain object-center"
+                sizes="(min-width: 640px) 50vw, 100vw"
+                priority
+              />
+            </div> */}
+            <div className="relative w-full sm:w-2/3 lg:w-3/4 h-[65vh] rounded-lg overflow-hidden bg-muted/20">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-contain object-center"
+                sizes="(min-width: 1024px) 75vw, (min-width: 640px) 66vw, 100vw"
+                priority
+              />
+            </div>
             <div className="flex-1">
               <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
               <p className="text-muted-foreground mb-4">{project.description}</p>
